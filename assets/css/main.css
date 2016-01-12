@@ -1,0 +1,33 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,300,700);
+body {
+  font-family: Roboto, sans-serif; }
+
+header {
+  background-color: #FF0046;
+  height: 100px;
+  text-align: center; }
+  header img {
+    height: 100px; }
+
+section {
+  padding: 20px; }
+
+.player {
+  background-color: #D9DDE6; }
+  .player .player-placeholder {
+    background-color: #AAB4C8;
+    margin: 0 auto;
+    width: 640px;
+    height: 360px; }
+
+.details {
+  background-color: #4674F6;
+  color: white; }
+  .details .details-title {
+    font-weight: 700; }
+  .details .details-copy {
+    position: absolute;
+    left: 250px;
+    font-weight: 300; }
+  .details p:last-child {
+    margin-bottom: 0; }
