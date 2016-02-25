@@ -1,4 +1,5 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto:400,300,700);
+@import url(https://design.jwplayer.com/karbon/KarbonWeb-Semibold.woff);
 body {
   font-family: Roboto, sans-serif; }
 
@@ -23,11 +24,43 @@ section {
 .details {
   background-color: #4674F6;
   color: white; }
-  .details .details-title {
-    font-weight: 700; }
-  .details .details-copy {
-    position: absolute;
-    left: 250px;
-    font-weight: 300; }
-  .details p:last-child {
-    margin-bottom: 0; }
+
+.details-title {
+  font-weight: 700; }
+
+.details-copy {
+  position: absolute;
+  left: 250px;
+  font-weight: 300; }
+
+p {
+  margin-bottom: 4em; }
+
+p:last-child {
+  margin-bottom: 2em; }
+
+.player-details {
+  background-color: #D9DDE6; }
+  .player-details p {
+    margin-bottom: 2em; }
+
+.btn {
+  color: white;
+  border-radius: 3px;
+  text-transform: uppercase;
+  width: auto;
+  text-align: center;
+  border: none;
+  display: inline-block;
+  vertical-align: middle;
+  padding: 10px 20px;
+  font-size: 14px;
+  line-height: 16px;
+  font-family: Karbon;
+  font-weight: 500; }
+
+.btn-red {
+  background-color: #FF0046; }
+
+.btn-blue {
+  background-color: #4674F6; }
