@@ -1,0 +1,28 @@
+body {
+  font-family: Roboto, sans-serif;
+}
+
+header {
+  background-color: $red;
+  height: 100px;
+  text-align: center;
+}
+
+.header-logo {
+  height: 100px;
+}
+
+.player-container {
+  width: 640px;
+  height: 360px;
+  background-color: $darkgrey;
+}
+
+.player-row {
+  padding: 20px;
+  background-color: $lightgrey;
+}
+
+.tab-bar {
+  
+}

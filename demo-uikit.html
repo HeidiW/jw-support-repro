@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>JW Player Support</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="assets/css/uikit.gradient.min.css">
+  <link rel="stylesheet" href="assets/css/main-uikit.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/2.25.0/js/uikit.min.js"></script>
+  <script src="http://p.jwpcdn.com/player/v/7.3.4/jwplayer.js"></script>
+  <script>jwplayer.key="iZaBV7cW7mBl61yIWCTK3IUeA1jqZjIUo28r0w==";</script>
+</head>
+<body>
+  <header>
+    <img src="assets/img/jw-logo-white.png" alt="JW Player" class="header-logo">
+  </header>
+  <div class="uk-grid player-row">
+    <div class="uk-container-center player-container"></div>
+  </div>
+  <div class="uk-grid uk-margin-top tab-bar">
+    <div class="uk-width-1-10"></div>
+    <div class="uk-width-8-10">
+      <ul class="uk-tab" data-uk-tab="{connect:'#content'}">
+        <li class="uk-active"><a href="">Behavior &amp; Reproduction</a></li>
+        <li><a href="">Player Details</a></li>
+        <li><a href="">Code</a></li>
+      </ul>
+    </div>
+    <div class="uk-width-1-10"></div>
+  </div>
+  <div class="uk-grid uk-margin-top">
+    <div class="uk-width-1-10"></div>
+    <div class="uk-width-8-10">
+      <ul id="content" class="uk-switcher uk-margin">
+        <li>
+          This is where the Behavior &amp; Reproduction would go.
+        </li>
+        <li>
+          This is where the Player Details would go.
+        </li>
+        <li>
+          This is where the Code would go.
+        </li>
+      </ul>
+    </div>
+    <div class="uk-width-1-10"></div>
+  </div>
+</body>
+</html>
