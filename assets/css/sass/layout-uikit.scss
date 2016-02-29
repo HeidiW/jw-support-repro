@@ -15,14 +15,15 @@ header {
 .player-container {
   width: 640px;
   height: 360px;
+  padding-left: 0;
   background-color: $darkgrey;
 }
 
 .player-row {
-  padding: 20px;
+  padding: 20px 0;
   background-color: $lightgrey;
 }
 
-.tab-bar {
-  
+.uk-grid {
+  margin-left: 0;
 }

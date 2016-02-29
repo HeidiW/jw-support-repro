@@ -12,8 +12,12 @@ header {
 .player-container {
   width: 640px;
   height: 360px;
+  padding-left: 0;
   background-color: #AAB4C8; }
 
 .player-row {
-  padding: 20px;
+  padding: 20px 0;
   background-color: #D9DDE6; }
+
+.uk-grid {
+  margin-left: 0; }

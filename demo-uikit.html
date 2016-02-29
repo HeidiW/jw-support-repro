@@ -16,7 +16,10 @@
     <img src="assets/img/jw-logo-white.png" alt="JW Player" class="header-logo">
   </header>
   <div class="uk-grid player-row">
-    <div class="uk-container-center player-container"></div>
+    <div class="uk-container-center
+     player-container">
+       <div id="myElement"></div>
+     </div>
   </div>
   <div class="uk-grid uk-margin-top tab-bar">
     <div class="uk-width-1-10"></div>
@@ -34,17 +37,70 @@
     <div class="uk-width-8-10">
       <ul id="content" class="uk-switcher uk-margin">
         <li>
-          This is where the Behavior &amp; Reproduction would go.
+          <dl class="uk-description-list-line">
+            <dt>Expected Behavior</dt>
+            <dd>Info goes here.</dd>
+            <dt>Actual Behavior</dt>
+            <dd>Info goes here.</dd>
+          </dl>
+          <h3>Reproduction Steps</h3>
+          <ul class="uk-list uk-list-striped">
+            <li>Step 1</li>
+            <li>Step 2</li>
+            <li>Step 3</li>
+            <li>Step 4</li>
+            <li>Step 5</li>
+          </ul>
         </li>
         <li>
-          This is where the Player Details would go.
+          <dl class="uk-description-list-line">
+            <dt>Player Version</dt>
+            <dd id="jw-player-version">7.3.4</dd>
+            <dt>Rendering Mode</dt>
+            <dd id="jw-player-provider">html5</dd>
+            <dt>Media Format</dt>
+            <dd id="jw-current-file-type">mp4</dd>
+            <dt>Currently Playing</dt>
+            <dd id="jw-current-file">http://qa.jwplayer.com/~abussey/demos/media/jw_demo.mp4</dd>
+          </dl>
         </li>
         <li>
-          This is where the Code would go.
+          <pre>
+            <!-- Insert Code Here -->
+            var playerInstance = jwplayer(&quot;myElement&quot;);
+            playerInstance.setup({
+              file: &quot;http://qa.jwplayer.com/~abussey/demos/media/jw_demo.mp4&quot;,
+              width: 640,
+              height: 360
+            });
+          </pre>
         </li>
       </ul>
     </div>
     <div class="uk-width-1-10"></div>
   </div>
+  <script>
+    // Insert Player Embed Code Here
+    var playerInstance = jwplayer("myElement");
+    playerInstance.setup({
+      file: "http://qa.jwplayer.com/~abussey/demos/media/jw_demo.mp4",
+      width: 640,
+      height: 360
+    });
+  </script>
+  <script>
+    // UI Code
+    var jwVersion = playerInstance.version;
+    playerInstance.on("playlistItem", function(response) {
+      var jwProvider = playerInstance.getProvider().name;
+      var jwCurrentFile = playerInstance.getPlaylistItem().file;
+      var jwCurrentFileType = playerInstance.getPlaylistItem().sources[response.index].type;
+      // Output Info to UI
+      $("#jw-player-version").html(jwVersion);
+      $("#jw-player-provider").html(jwProvider);
+      $("#jw-current-file-type").html(jwCurrentFileType);
+      $("#jw-current-file").html(jwCurrentFile);
+    })
+  </script>
 </body>
 </html>
