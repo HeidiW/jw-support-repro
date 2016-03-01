@@ -17,6 +17,16 @@ header {
   height: 360px;
   padding-left: 0;
   background-color: $darkgrey;
+
+  @media (max-width: 675px) {
+    width: 480px;
+    height: 270px;
+  }
+
+  @media (max-width: 375px) {
+    width: 320px;
+    height: 180px;
+  }
 }
 
 .player-row {

@@ -4,8 +4,8 @@
   <meta charset="UTF-8">
   <title>JW Player Support</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="assets/css/uikit.gradient.min.css">
-  <link rel="stylesheet" href="assets/css/main-uikit.css">
+  <link rel="stylesheet" href="http://qa.jwplayer.com/~abussey/demos/assets/css/uikit.gradient.min.css">
+  <link rel="stylesheet" href="http://qa.jwplayer.com/~abussey/demos/assets/css/main-uikit.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/2.25.0/js/uikit.min.js"></script>
   <script src="http://p.jwpcdn.com/player/v/7.3.4/jwplayer.js"></script>
@@ -13,7 +13,7 @@
 </head>
 <body>
   <header>
-    <img src="assets/img/jw-logo-white.png" alt="JW Player" class="header-logo">
+    <img src="http://qa.jwplayer.com/~abussey/demos/assets/img/jw-logo-white.png" alt="JW Player" class="header-logo">
   </header>
   <div class="uk-grid player-row">
     <div class="uk-container-center
@@ -25,7 +25,9 @@
     <div class="uk-width-1-10"></div>
     <div class="uk-width-8-10">
       <ul class="uk-tab" data-uk-tab="{connect:'#content'}">
+        <!-- Comment Out One of First Two Tabs That is Not Needed -->
         <li class="uk-active"><a href="">Behavior &amp; Reproduction</a></li>
+        <!-- <li class="uk-active"><a href="">Description</a></li> -->
         <li><a href="">Player Details</a></li>
         <li><a href="">Code</a></li>
       </ul>
@@ -36,6 +38,8 @@
     <div class="uk-width-1-10"></div>
     <div class="uk-width-8-10">
       <ul id="content" class="uk-switcher uk-margin">
+        <!-- Begin Behavior and Reproduction Section -->
+        <!-- Comment Out If Page is Not for a Bug or Escalation -->
         <li>
           <dl class="uk-description-list-line">
             <dt>Expected Behavior</dt>
@@ -52,6 +56,16 @@
             <li>Step 5</li>
           </ul>
         </li>
+        <!-- End Behavior and Reproduction Section -->
+
+        <!-- Begin Description Section -->
+        <!-- Comment Out If Page is For a Bug or Escalation -->
+        <!-- <li>
+          <p>This is a test.</p>
+        </li> -->
+        <!-- End Description Section -->
+
+        <!-- Begin Player Details Section -->
         <li>
           <dl class="uk-description-list-line">
             <dt>Player Version</dt>
@@ -64,6 +78,10 @@
             <dd id="jw-current-file">http://qa.jwplayer.com/~abussey/demos/media/jw_demo.mp4</dd>
           </dl>
         </li>
+        <!-- End Player Details Section -->
+
+        <!-- Insert Code Example Section -->
+        <!-- HTML Decode Text To Appear Correctly In Code Section -->
         <li>
           <pre>
             <!-- Insert Code Here -->
@@ -75,6 +93,7 @@
             });
           </pre>
         </li>
+        <!-- End Code Example Section -->
       </ul>
     </div>
     <div class="uk-width-1-10"></div>
@@ -84,8 +103,8 @@
     var playerInstance = jwplayer("myElement");
     playerInstance.setup({
       file: "http://qa.jwplayer.com/~abussey/demos/media/jw_demo.mp4",
-      width: 640,
-      height: 360
+      width: "100%",
+      aspectratio: "16:9"
     });
   </script>
   <script>
@@ -100,6 +119,30 @@
       $("#jw-player-provider").html(jwProvider);
       $("#jw-current-file-type").html(jwCurrentFileType);
       $("#jw-current-file").html(jwCurrentFile);
+    });
+
+    var oldWidth = $(window).width();
+
+    $(window).resize(function() {
+      var newWidth = $(window).width();
+      if (newWidth <= 675 && newWidth > 375 && oldWidth > 675) {
+        playerInstance.resize(480, 270);
+      } else if (newWidth > 675 && oldWidth < 675) {
+        playerInstance.resize(640, 360);
+      } else if (newWidth <= 375 && oldWidth > 375) {
+        playerInstance.resize(320, 180);
+      }
+      oldWidth = newWidth;
+    });
+
+    playerInstance.on("ready", function() {
+      var loadedWidth = $(window).width();
+      console.log("loadedWidth: " + loadedWidth + "px");
+      if (loadedWidth <= 675 && loadedWidth > 375) {
+        playerInstance.resize(480, 270);
+      } else if (loadedWidth <= 375) {
+        playerInstance.resize(320, 180);
+      }
     })
   </script>
 </body>
