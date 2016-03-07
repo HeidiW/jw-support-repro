@@ -32,6 +32,9 @@
   <meta name="msapplication-TileImage" content="http://qa.jwplayer.com.s3.amazonaws.com/~abussey/demos/assets/favicons/mstile-144x144.png">
   <meta name="msapplication-config" content="http://qa.jwplayer.com.s3.amazonaws.com/~abussey/demos/assets/favicons/browserconfig.xml">
   <meta name="theme-color" content="#ffffff">
+  <!-- Highlight.js for Syntax Highlighting in Code Examples -->
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.2.0/styles/default.min.css">
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.2.0/highlight.min.js"></script>
 </head>
 <body>
   <header>
@@ -112,15 +115,13 @@
         <!-- Insert Code Example Section -->
         <!-- HTML Decode Text To Appear Correctly In Code Section -->
         <li>
-          <pre>
-            <!-- Insert Code Here -->
-var playerInstance = jwplayer(&quot;myElement&quot;);
+          <!-- Insert Player Script Used Between the <code> Tags -->
+          <pre><code class="lang-js">var playerInstance = jwplayer(&quot;myElement&quot;);
 playerInstance.setup({
   file: &quot;http://qa.jwplayer.com/~abussey/demos/media/jw_demo.mp4&quot;,
   width: &quot;100%&quot;,
   aspectratio: &quot;16:9&quot;
-});
-          </pre>
+});</code></pre>
         </li>
         <!-- End Code Example Section -->
       </ul>
@@ -174,7 +175,6 @@ playerInstance.setup({
 
     playerInstance.on("ready", function() {
       var loadedWidth = $(window).width();
-      console.log("loadedWidth: " + loadedWidth + "px");
       if (loadedWidth <= 675 && loadedWidth > 375) {
         playerInstance.resize(480, 270);
       } else if (loadedWidth <= 375) {
@@ -182,7 +182,12 @@ playerInstance.setup({
       }
     })
 
-
+    // Hightlight.js script
+    $(document).ready(function() {
+      $('pre code').each(function(i, block) {
+        hljs.highlightBlock(block);
+      });
+    });
   </script>
 </body>
 </html>
