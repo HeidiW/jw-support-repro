@@ -154,7 +154,7 @@ playerInstance.setup({
 
     // Player Log Code
     playerInstance.on("all", function(response) {
-      $("#player-log").append("<li>" + response + "</li>");
+      $("#player-log").append("<li><code>" + response + "</code></li>");
     });
 
     // Responsive script
