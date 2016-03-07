@@ -29,6 +29,7 @@
         <li class="uk-active"><a href="">Behavior &amp; Reproduction</a></li>
         <!-- <li class="uk-active"><a href="">Description</a></li> -->
         <li><a href="">Player Details</a></li>
+        <li><a href="">Player Log</a></li>
         <li><a href="">Code</a></li>
       </ul>
     </div>
@@ -80,6 +81,12 @@
         </li>
         <!-- End Player Details Section -->
 
+        <!-- Insert Player Log Section -->
+        <li>
+          <ul id="player-log" class="uk-list uk-list-striped"></ul>
+        </li>
+        <!-- End Player Log Section -->
+
         <!-- Insert Code Example Section -->
         <!-- HTML Decode Text To Appear Correctly In Code Section -->
         <li>
@@ -88,8 +95,8 @@
             var playerInstance = jwplayer(&quot;myElement&quot;);
             playerInstance.setup({
               file: &quot;http://qa.jwplayer.com/~abussey/demos/media/jw_demo.mp4&quot;,
-              width: 640,
-              height: 360
+              width: &quot;100%&quot;,
+              aspectratio: &quot;16:9&quot;
             });
           </pre>
         </li>
@@ -109,6 +116,7 @@
   </script>
   <script>
     // UI Code
+    // May need to change playerInstance to jwplayer() if using JW 6
     var jwVersion = playerInstance.version;
     playerInstance.on("playlistItem", function(response) {
       var jwProvider = playerInstance.getProvider().name;
@@ -121,6 +129,13 @@
       $("#jw-current-file").html(jwCurrentFile);
     });
 
+    // Player Log Code
+    playerInstance.on("all", function(response) {
+      $("#player-log").append("<li>" + response + "</li>");
+    });
+
+    // Responsive script
+    // Will resize the player if the page is narrow, or resized to be narrower
     var oldWidth = $(window).width();
 
     $(window).resize(function() {
@@ -144,6 +159,8 @@
         playerInstance.resize(320, 180);
       }
     })
+
+
   </script>
 </body>
 </html>
