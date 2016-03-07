@@ -20,18 +20,18 @@ There is no need to download any of the JavaScript or CSS referenced by this rep
 ### Features
 ***
 The page has a 640 x 360 player embedded on it. Also on the page, below the player, are the following tabs:  
-  
+<br>
 * **Browser & Reproduction** (hideable, if not for an escalation)  
 * **Description** (hideable, if for an escalation)  
 * **Player Details** - shows the player version, rendering mode, media format, and playlist item
 * **Player Log** - This tab shows the output of the `.on('all')` API event.
-  
+<br>
 ### Page Setup
 ***
 By default, the page is setup in a way that is well-suited for escalations and bug reports.  
-  
+<br>
 If you would like to change this behavior to be more of a demo page, all you would need to do is comment and uncomment some lines of the code.  
-  
+<br>
 * Escalations/Bug Reports
 	* Lines That Need to be Uncommented
 		* 29
@@ -39,7 +39,7 @@ If you would like to change this behavior to be more of a demo page, all you wou
 	* Lines That Need to be Commented
 		* 30
 		* 63 thru 65  
-  
+<br>
 * Demo Pages
 	* Lines That Need to be Uncommented
 		* 30
@@ -47,21 +47,21 @@ If you would like to change this behavior to be more of a demo page, all you wou
 	* Lines That Need to be Commented
 		* 29
 		* 43 thru 58  
-  
+<br>
 To easily comment and uncomment code, most text editors support a keyboard shortcut. Just select whatever code you would like to be affected and press CMD+/ (forward-slash) on Mac or CTRL+/ on Windows.
 
 ### Formatting
 ***
 **Alert**  
-  
+<br>
 `<div class='uk-alert'>Text of the Alert</div>`  
-  
+<br>
 **Inline Code**  
-  
+<br>
 `<code>playerInstance.play();</code>`
-  
+<br>
 **Code Section**
-  
+<br>
 	<pre>
 	  <code class='lang-js'>
 	    playerInstance.setup({  
@@ -69,7 +69,7 @@ To easily comment and uncomment code, most text editors support a keyboard short
 	    });
 	  </code>
 	</pre>
-  
+<br>
 The class attribute of the `<code>` tag can be set to a different scripting language. The example above is set to highlight code syntax for JavaScript. If you would want to change it to HTML or CSS, you can change the class name to `lang-html` or `lang-css`, respectively.
 
 ### Issues? Feature Requests?
