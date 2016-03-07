@@ -24,8 +24,8 @@ The page has a 640 x 360 player embedded on it. Also on the page, below the play
 * **Browser & Reproduction** (hideable, if not for an escalation)  
 * **Description** (hideable, if for an escalation)  
 * **Player Details** - shows the player version, rendering mode, media format, and playlist item  
-* **Player Log** - This tab shows the output of the `.on('all')` API event.
-<br>
+* **Player Log** - This tab shows the output of the `.on('all')` API event.  
+
 ## Page Setup
 ***
 By default, the page is setup in a way that is well-suited for escalations and bug reports.  
@@ -47,6 +47,7 @@ If you would like to change this behavior to be more of a demo page, all you wou
 	* Lines That Need to be Commented
 		* 29
 		* 43 thru 58  
+  
 <br>
 To easily comment and uncomment code, most text editors support a keyboard shortcut. Just select whatever code you would like to be affected and press CMD+/ (forward-slash) on Mac or CTRL+/ on Windows.
 
@@ -58,18 +59,20 @@ To easily comment and uncomment code, most text editors support a keyboard short
 <br>
 **Inline Code**  
 <br>
-`<code>playerInstance.play();</code>`
+`<code>playerInstance.play();</code>`  
 <br>
-**Code Section**
+**Code Section**  
 <br>
-	<pre>
-	  <code class='lang-js'>
-	    playerInstance.setup({  
-	      file: 'whatever.mp4'
-	    });
-	  </code>
-	</pre>
-<br>
+```html
+<pre>
+  <code class='lang-js'>
+    playerInstance.setup({  
+      file: 'whatever.mp4'
+    });
+  </code>
+</pre>
+```
+
 The class attribute of the `<code>` tag can be set to a different scripting language. The example above is set to highlight code syntax for JavaScript. If you would want to change it to HTML or CSS, you can change the class name to `lang-html` or `lang-css`, respectively.
 
 ## Issues? Feature Requests?
