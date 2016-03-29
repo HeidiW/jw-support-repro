@@ -8,8 +8,18 @@
   <link rel="stylesheet" href="http://qa.jwplayer.com/~abussey/demos/assets/css/main-uikit.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/2.25.0/js/uikit.min.js"></script>
-  <script src="http://p.jwpcdn.com/player/v/7.3.4/jwplayer.js"></script>
-  <script>jwplayer.key="iZaBV7cW7mBl61yIWCTK3IUeA1jqZjIUo28r0w==";</script>
+  
+  <!--By default, this page is using the production version of the player.
+  If you would like to use a staging or beta version, instead, just
+  comment out the production player and uncomment the version you want.-->
+  
+  <!-- Production Player -->
+  <script src="http://content.jwplatform.com/libraries/oH2wJDod.js"></script>
+  <!-- Staging Player -->
+  <!--<script src="http://content.jwplatform.com/libraries/lwnv0J81.js"></script>-->
+  <!-- Beta Player -->
+  <!--<script src="http://content.jwplatform.com/libraries/nnqVeaug.js"></script>-->
+  
   <!-- Favicons -->
   <link rel="apple-touch-icon" sizes="57x57" href="http://qa.jwplayer.com.s3.amazonaws.com/~abussey/demos/assets/favicons/apple-touch-icon-57x57.png">
   <link rel="apple-touch-icon" sizes="60x60" href="http://qa.jwplayer.com.s3.amazonaws.com/~abussey/demos/assets/favicons/apple-touch-icon-60x60.png">
@@ -135,7 +145,7 @@ playerInstance.setup({
   file: "http://qa.jwplayer.com/~abussey/demos/media/jw_demo.mp4",
   width: "100%",
   aspectratio: "16:9",
-  primary: "flash"
+  mediaid: "d0nNiSuCks" // not 8 characters :(
 });</script>
   </div>
   <script>
