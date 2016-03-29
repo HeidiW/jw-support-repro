@@ -1,2 +1,6 @@
+v1.0.1 (03/29/2016)
+* Added codeblock.js to automatically copy embed/config code to "Code" tab on the page
+* Switched to cloud-hosted player libraries
+
 v1 (03/06/2016)
 * Initial release
