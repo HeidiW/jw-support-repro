@@ -114,7 +114,7 @@
 
         <!-- Insert Code Example Section -->
         <!-- HTML Decode Text To Appear Correctly In Code Section -->
-        <li>
+        <li id="displayCode">
           <!-- Insert Player Script Used Between the <code> Tags -->
           <pre><code class="lang-js">var playerInstance = jwplayer(&quot;myElement&quot;);
 playerInstance.setup({
@@ -128,15 +128,16 @@ playerInstance.setup({
     </div>
     <div class="uk-width-1-10"></div>
   </div>
-  <script>
-    // Insert Player Embed Code Here
-    var playerInstance = jwplayer("myElement");
-    playerInstance.setup({
-      file: "http://qa.jwplayer.com/~abussey/demos/media/jw_demo.mp4",
-      width: "100%",
-      aspectratio: "16:9"
-    });
-  </script>
+  <div id="embedCode">
+    <!-- Insert Player Embed Code Here -->
+    <script>var playerInstance = jwplayer("myElement");
+playerInstance.setup({
+  file: "http://qa.jwplayer.com/~abussey/demos/media/jw_demo.mp4",
+  width: "100%",
+  aspectratio: "16:9",
+  primary: "flash"
+});</script>
+  </div>
   <script>
     // UI Code
     // May need to change playerInstance to jwplayer() if using JW 6
@@ -189,5 +190,6 @@ playerInstance.setup({
       });
     });
   </script>
+  <script src="assets/js/codeblock.js"></script>
 </body>
 </html>
