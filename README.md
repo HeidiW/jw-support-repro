@@ -11,7 +11,7 @@
 ## Getting Started
 If you want to download the source code, you can do so from this GitHub repository by clicking on the **Download ZIP** button above.  
 
-However, if you use TextExpander, I would recommend copying and pasting the contents of [demo-uikit.html](https://github.com/waxidiotic/jw-support-repro/blob/master/demo-uikit.html) into a new snippet. This way you can easily create a new reproduction page by expanding the snippet inside of a new document in your text editor of choice.  
+However, if you use TextExpander, I would recommend copying and pasting the contents of [demo.html](https://github.com/waxidiotic/jw-support-repro/blob/master/demo.html) into a new snippet. This way you can easily create a new reproduction page by expanding the snippet inside of a new document in your text editor of choice.  
 
 There is no need to download any of the JavaScript or CSS referenced by this reproduction page as they are all linked to using absolute URLs.
 

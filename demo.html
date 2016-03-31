@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>JW Player Support</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://qa.jwplayer.com/~abussey/demos/assets/css/uikit.gradient.min.css">
+  <link rel="stylesheet" href="http://qa.jwplayer.com/~abussey/demos/assets/css/main-uikit.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/2.25.0/js/uikit.min.js"></script>
+
+  <!--By default, this page is using the production version of the player.
+  If you would like to use a staging or beta version, instead, just
+  comment out the production player and uncomment the version you want.-->
+
+  <!-- Production Player -->
+  <script src="http://content.jwplatform.com/libraries/oH2wJDod.js"></script>
+  <!-- Staging Player -->
+  <!--<script src="http://content.jwplatform.com/libraries/lwnv0J81.js"></script>-->
+  <!-- Beta Player -->
+  <!--<script src="http://content.jwplatform.com/libraries/nnqVeaug.js"></script>-->
+
+  <!-- Favicons -->
+  <link rel="apple-touch-icon" sizes="57x57" href="http://qa.jwplayer.com.s3.amazonaws.com/~abussey/demos/assets/favicons/apple-touch-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="http://qa.jwplayer.com.s3.amazonaws.com/~abussey/demos/assets/favicons/apple-touch-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="http://qa.jwplayer.com.s3.amazonaws.com/~abussey/demos/assets/favicons/apple-touch-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="http://qa.jwplayer.com.s3.amazonaws.com/~abussey/demos/assets/favicons/apple-touch-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="http://qa.jwplayer.com.s3.amazonaws.com/~abussey/demos/assets/favicons/apple-touch-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="http://qa.jwplayer.com.s3.amazonaws.com/~abussey/demos/assets/favicons/apple-touch-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="http://qa.jwplayer.com.s3.amazonaws.com/~abussey/demos/assets/favicons/apple-touch-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="http://qa.jwplayer.com.s3.amazonaws.com/~abussey/demos/assets/favicons/apple-touch-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="http://qa.jwplayer.com.s3.amazonaws.com/~abussey/demos/assets/favicons/apple-touch-icon-180x180.png">
+  <link rel="icon" type="image/png" href="http://qa.jwplayer.com.s3.amazonaws.com/~abussey/demos/assets/favicons/favicon-32x32.png" sizes="32x32">
+  <link rel="icon" type="image/png" href="http://qa.jwplayer.com.s3.amazonaws.com/~abussey/demos/assets/favicons/favicon-194x194.png" sizes="194x194">
+  <link rel="icon" type="image/png" href="http://qa.jwplayer.com.s3.amazonaws.com/~abussey/demos/assets/favicons/favicon-96x96.png" sizes="96x96">
+  <link rel="icon" type="image/png" href="http://qa.jwplayer.com.s3.amazonaws.com/~abussey/demos/assets/favicons/android-chrome-192x192.png" sizes="192x192">
+  <link rel="icon" type="image/png" href="http://qa.jwplayer.com.s3.amazonaws.com/~abussey/demos/assets/favicons/favicon-16x16.png" sizes="16x16">
+  <link rel="manifest" href="http://qa.jwplayer.com.s3.amazonaws.com/~abussey/demos/assets/favicons/manifest.json">
+  <link rel="mask-icon" href="http://qa.jwplayer.com.s3.amazonaws.com/~abussey/demos/assets/favicons/safari-pinned-tab.svg" color="#5bbad5">
+  <link rel="shortcut icon" href="http://qa.jwplayer.com.s3.amazonaws.com/~abussey/demos/assets/favicons/favicon.ico">
+  <meta name="msapplication-TileColor" content="#b91d47">
+  <meta name="msapplication-TileImage" content="http://qa.jwplayer.com.s3.amazonaws.com/~abussey/demos/assets/favicons/mstile-144x144.png">
+  <meta name="msapplication-config" content="http://qa.jwplayer.com.s3.amazonaws.com/~abussey/demos/assets/favicons/browserconfig.xml">
+  <meta name="theme-color" content="#ffffff">
+  <!-- Highlight.js for Syntax Highlighting in Code Examples -->
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.2.0/styles/default.min.css">
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.2.0/highlight.min.js"></script>
+</head>
+<body>
+  <header>
+    <img src="http://qa.jwplayer.com/~abussey/demos/assets/img/jw-logo-white.png" alt="JW Player" class="header-logo">
+  </header>
+  <div class="uk-grid player-row">
+    <div class="uk-container-center
+     player-container">
+       <div id="myElement"></div>
+     </div>
+  </div>
+  <div class="uk-grid uk-margin-top tab-bar">
+    <div class="uk-width-1-10"></div>
+    <div class="uk-width-8-10">
+      <ul class="uk-tab" data-uk-tab="{connect:'#content'}">
+        <!-- Comment Out One of First Two Tabs That is Not Needed -->
+        <li class="uk-active"><a href="">Behavior &amp; Reproduction</a></li>
+        <!-- <li class="uk-active"><a href="">Description</a></li> -->
+        <li><a href="">Player Details</a></li>
+        <li><a href="">Player Log</a></li>
+        <li><a href="">Code</a></li>
+      </ul>
+    </div>
+    <div class="uk-width-1-10"></div>
+  </div>
+  <div class="uk-grid uk-margin-top">
+    <div class="uk-width-1-10"></div>
+    <div class="uk-width-8-10">
+      <ul id="content" class="uk-switcher uk-margin">
+        <!-- Begin Behavior and Reproduction Section -->
+        <!-- Comment Out If Page is Not for a Bug or Escalation -->
+        <li>
+          <dl class="uk-description-list-line">
+            <dt>Expected Behavior</dt>
+            <dd>Info goes here.</dd>
+            <dt>Actual Behavior</dt>
+            <dd>Info goes here.</dd>
+          </dl>
+          <h3>Reproduction Steps</h3>
+          <ul class="uk-list uk-list-striped">
+            <li>Step 1</li>
+            <li>Step 2</li>
+            <li>Step 3</li>
+            <li>Step 4</li>
+            <li>Step 5</li>
+          </ul>
+        </li>
+        <!-- End Behavior and Reproduction Section -->
+
+        <!-- Begin Description Section -->
+        <!-- Comment Out If Page is For a Bug or Escalation -->
+        <!-- <li>
+          <p>This is a test.</p>
+        </li> -->
+        <!-- End Description Section -->
+
+        <!-- Begin Player Details Section -->
+        <li>
+          <dl class="uk-description-list-line">
+            <dt>Player Version</dt>
+            <dd id="jw-player-version">7.3.4</dd>
+            <dt>Rendering Mode</dt>
+            <dd id="jw-player-provider">html5</dd>
+            <dt>Media Format</dt>
+            <dd id="jw-current-file-type">mp4</dd>
+            <dt>Currently Playing</dt>
+            <dd id="jw-current-file">http://qa.jwplayer.com/~abussey/demos/media/jw_demo.mp4</dd>
+          </dl>
+        </li>
+        <!-- End Player Details Section -->
+
+        <!-- Insert Player Log Section -->
+        <li>
+          <ul id="player-log" class="uk-list uk-list-striped"></ul>
+        </li>
+        <!-- End Player Log Section -->
+
+        <!-- Insert Code Example Section -->
+        <!-- HTML Decode Text To Appear Correctly In Code Section -->
+        <li id="displayCode">
+          <!-- Insert Player Script Used Between the <code> Tags -->
+          <pre><code class="lang-js">var playerInstance = jwplayer(&quot;myElement&quot;);
+playerInstance.setup({
+  file: &quot;http://qa.jwplayer.com/~abussey/demos/media/jw_demo.mp4&quot;,
+  width: &quot;100%&quot;,
+  aspectratio: &quot;16:9&quot;
+});</code></pre>
+        </li>
+        <!-- End Code Example Section -->
+      </ul>
+    </div>
+    <div class="uk-width-1-10"></div>
+  </div>
+  <div id="embedCode">
+    <!-- Insert Player Embed Code Here -->
+    <script>var playerInstance = jwplayer("myElement");
+playerInstance.setup({
+  file: "http://qa.jwplayer.com/~abussey/demos/media/jw_demo.mp4",
+  width: "100%",
+  aspectratio: "16:9",
+  mediaid: "d0nNiSuCks" // not 8 characters :(
+});</script>
+  </div>
+  <script>
+    // UI Code
+    // May need to change playerInstance to jwplayer() if using JW 6
+    var jwVersion = playerInstance.version;
+    playerInstance.on("playlistItem", function(response) {
+      var jwProvider = playerInstance.getProvider().name;
+      var jwCurrentFile = playerInstance.getPlaylistItem().file;
+      var jwCurrentFileType = playerInstance.getPlaylistItem().sources[response.index].type;
+      // Output Info to UI
+      $("#jw-player-version").html(jwVersion);
+      $("#jw-player-provider").html(jwProvider);
+      $("#jw-current-file-type").html(jwCurrentFileType);
+      $("#jw-current-file").html(jwCurrentFile);
+    });
+
+    // Player Log Code
+    playerInstance.on("all", function(response) {
+      $("#player-log").append("<li><code>" + response + "</code></li>");
+    });
+
+    // Responsive script
+    // Will resize the player if the page is narrow, or resized to be narrower
+    var oldWidth = $(window).width();
+
+    $(window).resize(function() {
+      var newWidth = $(window).width();
+      if (newWidth <= 675 && newWidth > 375 && oldWidth > 675) {
+        playerInstance.resize(480, 270);
+      } else if (newWidth > 675 && oldWidth < 675) {
+        playerInstance.resize(640, 360);
+      } else if (newWidth <= 375 && oldWidth > 375) {
+        playerInstance.resize(320, 180);
+      }
+      oldWidth = newWidth;
+    });
+
+    playerInstance.on("ready", function() {
+      var loadedWidth = $(window).width();
+      if (loadedWidth <= 675 && loadedWidth > 375) {
+        playerInstance.resize(480, 270);
+      } else if (loadedWidth <= 375) {
+        playerInstance.resize(320, 180);
+      }
+    })
+
+    // Hightlight.js script
+    $(document).ready(function() {
+      $('pre code').each(function(i, block) {
+        hljs.highlightBlock(block);
+      });
+    });
+  </script>
+  <script src="http://qa.jwplayer.com/~abussey/demos/assets/js/codeblock.js"></script>
+</body>
+</html>
