@@ -51,7 +51,7 @@ To easily comment and uncomment code, most text editors support a keyboard short
 **Alert**  
 `<div class='uk-alert'>Text of the Alert</div>`
 
-**Button**
+**Button**  
 `<button class='uk-button' type=“button'></button>`
 
 **Inline Code**  
