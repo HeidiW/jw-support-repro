@@ -20,7 +20,8 @@ The page has a 640 x 360 player embedded on it. Also on the page, below the play
 * **Browser & Reproduction** (hideable, if not for an escalation)  
 * **Description** (hideable, if for an escalation)  
 * **Player Details** - shows the player version, rendering mode, media format, and playlist item  
-* **Player Log** - This tab shows the output of the `.on('all')` API event.  
+* **Player Log** - This tab shows the output of the `.on('all')` API event.
+* **Code** - This tab takes the code found in within `<div id='embedCode'>` and reformats it as code with syntax highlighting and displays it within this tab.
 
 ## Page Setup
 By default, the page is setup in a way that is well-suited for escalations and bug reports.  
@@ -48,7 +49,10 @@ To easily comment and uncomment code, most text editors support a keyboard short
 
 ## Formatting
 **Alert**  
-`<div class='uk-alert'>Text of the Alert</div>`  
+`<div class='uk-alert'>Text of the Alert</div>`
+
+**Button**
+`<button class='uk-button' type=“button'></button>`
 
 **Inline Code**  
 `<code>playerInstance.play();</code>`  
