@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+    <head>     
+<!--        <meta http-equiv="refresh" content="60" />     -->
+       <script src="https://content.jwplatform.com/libraries/26IgjhD0.js"></script>
+
+       <style>
+           .jw-error-msg {
+               font-family: fantasy !important;
+               font-size: larger !important; 
+               line-height: 150% !important;
+           }
+</style>
+</head>
+        <body>
+            <h2>JW8 w/ Custom Error Message, Countdown, and Page reload</h2>
+         <div id="myElement"></div>
+         <script type='text/javascript'>
+         jwplayer('myElement').setup({ 
+             playlist: [{
+             image: 'http://content.jwplatform.com/thumbs/NXAHs8nK-720.jpg',
+             title: 'BBB Custom Error Message',
+             file: 'https://content.jwplatform.com/manifest/NXAHs8nK.m3u8' 
+            }],
+             width: "80%",
+             aspectratio: "16:9",
+             autostart: "true",
+             cast:{ }
+            });
+
+            jwplayer('myElement').on("error", function() {
+            console.log("An error has occurred!");
+            function displayCustomError() {
+
+            document.querySelectorAll(".jw-error-msg")[0].innerHTML = '<center>There is no stream currently playing. <br> If you see this message during a scheduled performance, your browser will automatically reload in <span id="time">1:00</span> minute.</center>';
+            }
+                var errorIcon = document.querySelector('.jw-display-controls');
+                errorIcon.style.display = 'none';
+                displayCustomError();
+                
+                });
+                
+                //timer function
+                function startTimer(duration, display) {
+                var timer = duration, minutes, seconds;
+                setInterval (function () {
+                minutes = parseInt(timer / 60, 10)
+                seconds = parseInt(timer % 60, 10);
+
+
+                minutes = minutes < 10 ? "0" + minutes : minutes;
+                seconds = seconds < 10 ? "0" + seconds : seconds;
+
+                display.textContent = minutes + ":" + seconds;
+                
+                
+                
+                  if (--timer < 0) {
+                  timer = duration;
+                  window.location.reload();
+                  }
+                  }, 1000);
+                  }
+                  
+                  
+            
+                window.onload = function () {
+                var oneMinute = 60 * 1,
+                display = document.querySelector('#time');
+                startTimer(oneMinute, display);
+                }; 
+
+            </script>
+    </div>
+</body>
+</html>
+
